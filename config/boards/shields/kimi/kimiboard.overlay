@@ -1,4 +1,4 @@
-#include <input/processors.dtsi>
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
@@ -55,7 +55,6 @@
     status = "okay";
     compatible = "zmk,input-listener";
     device = <&trackball>;
-    input-processors = <&zip_xy_transform 0 1 1 0 1 1>;
   };
 };
 
