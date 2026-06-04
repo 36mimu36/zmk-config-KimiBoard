@@ -17,20 +17,20 @@
 
         default_layer {
             bindings = <
-                // row0左から右へ（一番左のキーはリセットボタン）
-                &bt BT_NXT  &kp BACKSPACE  &kp SPACE  &kp ENTER
+                // 本体180度回転に対応：ユーザーから見て左→右が BT, BS, SPACE, ENTER
+                &kp ENTER  &kp SPACE  &kp BACKSPACE  &bt BT_NXT
             >;
 	};
 
     mouse_key_layer {
             bindings = <
-                &trans  &mkp MB3  &mkp LCLK  &mkp RCLK
+                &mkp RCLK  &mkp LCLK  &mkp MB3  &trans
         >;
     };
 
     auto_mouse_layer {
             bindings = <
-                &trans  &mkp MB3  &mkp LCLK  &mkp RCLK
+                &mkp RCLK  &mkp LCLK  &mkp MB3  &trans
         >;
     };
 
@@ -62,7 +62,7 @@
 
         combo_layer2 {
             bindings = <&kp LANGUAGE_1>;
-            key-positions = <2 3>;
+            key-positions = <0 1>;
             timeout-ms = <50>;
         };
 
@@ -71,7 +71,7 @@
 
         combo_layer4 {
             bindings = <&tog 1>;
-            key-positions = <1 3>;
+            key-positions = <0 2>;
             timeout-ms = <50>;
         };
 
