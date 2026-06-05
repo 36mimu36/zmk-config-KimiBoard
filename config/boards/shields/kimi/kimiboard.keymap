@@ -24,14 +24,15 @@
 	};
 
     mouse_key_layer {
+            // 図(README)基準: 1キー=button2(R CLK), 2キー=button3(WHEEL), 3キー=button1(L CLK)
             bindings = <
-                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
+                &trans  &mkp RCLK  &mkp MB3  &mkp LCLK
         >;
     };
 
     auto_mouse_layer {
             bindings = <
-                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
+                &trans  &mkp RCLK  &mkp MB3  &mkp LCLK
         >;
     };
 
@@ -56,6 +57,7 @@
             bindings = <&lt 3 LANGUAGE_2>;
             key-positions = <2 3>;
             timeout-ms = <50>;
+            layers = <0>;
         };
 
         // Key2 + 3 = (□ - □ ■ ■)
@@ -65,6 +67,7 @@
             bindings = <&kp LANGUAGE_1>;
             key-positions = <1 2>;
             timeout-ms = <50>;
+            layers = <0>;
         };
 
         // Key1 + 3 = (□ -  ■ □ ■)
@@ -83,6 +86,23 @@
             bindings = <&bt BT_CLR>;
             key-positions = <0 1>;
             timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        // マウスモード中: 図の 1キー+2キー → ホイール上
+        combo_scroll_up {
+            bindings = <&msc SCRL_UP>;
+            key-positions = <1 2>;
+            timeout-ms = <50>;
+            layers = <1 2>;
+        };
+
+        // マウスモード中: 図の 2キー+3キー → ホイール下
+        combo_scroll_down {
+            bindings = <&msc SCRL_DOWN>;
+            key-positions = <2 3>;
+            timeout-ms = <50>;
+            layers = <1 2>;
         };
 
 
