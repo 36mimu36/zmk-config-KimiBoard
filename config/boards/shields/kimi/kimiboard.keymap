@@ -12,19 +12,6 @@
 
 
 / {
-    macros {
-        scroll_up_fast: scroll_up_fast {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>;
-        };
-        scroll_down_fast: scroll_down_fast {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -88,16 +75,16 @@
             layers = <0>;
         };
 
-        // 図の 1キー+2キー → ホイール上 (3ティック、全レイヤー)
+        // 図の 1キー+2キー → ホイール上 (全レイヤー)
         combo_scroll_up {
-            bindings = <&scroll_up_fast>;
+            bindings = <&msc SCRL_UP>;
             key-positions = <1 2>;
             timeout-ms = <50>;
         };
 
-        // 図の 2キー+3キー → ホイール下 (3ティック、全レイヤー)
+        // 図の 2キー+3キー → ホイール下 (全レイヤー)
         combo_scroll_down {
-            bindings = <&scroll_down_fast>;
+            bindings = <&msc SCRL_DOWN>;
             key-positions = <2 3>;
             timeout-ms = <50>;
         };
