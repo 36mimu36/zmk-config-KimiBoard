@@ -75,16 +75,16 @@
             layers = <0>;
         };
 
-        // 図の 1キー+2キー → ホイール上 (3ティック、全レイヤー)
+        // 図の 1キー+2キー → ホイール上 (デフォルト10の3倍 = 30、全レイヤー)
         combo_scroll_up {
-            bindings = <&msc MOVE_VERT(3)>;
+            bindings = <&msc MOVE_Y(30)>;
             key-positions = <1 2>;
             timeout-ms = <50>;
         };
 
-        // 図の 2キー+3キー → ホイール下 (3ティック、全レイヤー)
+        // 図の 2キー+3キー → ホイール下 (全レイヤー)
         combo_scroll_down {
-            bindings = <&msc MOVE_VERT(-3)>;
+            bindings = <&msc MOVE_Y(-30)>;
             key-positions = <2 3>;
             timeout-ms = <50>;
         };
