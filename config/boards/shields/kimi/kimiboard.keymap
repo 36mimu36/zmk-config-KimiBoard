@@ -66,22 +66,8 @@
             // タップでLANGUAGE_2へ切り替え
 			// ホールドでスクロールレイヤー
 
-        combo_layer1 {
-            bindings = <&lt 3 LANGUAGE_2>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        // Key2 + 3 = (□ - □ ■ ■)
-			// タップでLANGUAGE_1へ切り替え
-
-        combo_layer2 {
-            bindings = <&kp LANGUAGE_1>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-            layers = <0>;
-        };
+        // 旧 combo_layer1 (2+3 → LANGUAGE_2) と combo_layer2 (1+2 → LANGUAGE_1) は削除
+        // スクロールコンボに位置を譲った (英数/かなは Karabiner 側で対応)
 
         // Key1 + 3 = (□ -  ■ □ ■)
 			// 1番レイヤーをトグル(マウス操作限定レイヤー)
@@ -102,20 +88,18 @@
             layers = <0>;
         };
 
-        // マウスモード中: 図の 1キー+2キー → ホイール上 (3ティック)
+        // 図の 1キー+2キー → ホイール上 (3ティック、全レイヤー)
         combo_scroll_up {
             bindings = <&scroll_up_fast>;
             key-positions = <1 2>;
             timeout-ms = <50>;
-            layers = <1 2>;
         };
 
-        // マウスモード中: 図の 2キー+3キー → ホイール下 (3ティック)
+        // 図の 2キー+3キー → ホイール下 (3ティック、全レイヤー)
         combo_scroll_down {
             bindings = <&scroll_down_fast>;
             key-positions = <2 3>;
             timeout-ms = <50>;
-            layers = <1 2>;
         };
 
 
