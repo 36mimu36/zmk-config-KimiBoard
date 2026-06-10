@@ -23,15 +23,15 @@
 	};
 
     mouse_key_layer {
-            // 図(README)基準: 1キー=button2(R CLK), 2キー=button3(WHEEL), 3キー=button1(L CLK)
+            // 1キー=button2(R CLK), 2キー=button1(L CLK), 3キー=button3(WHEEL)
             bindings = <
-                &trans  &mkp RCLK  &mkp MB3  &mkp LCLK
+                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
         >;
     };
 
     auto_mouse_layer {
             bindings = <
-                &trans  &mkp RCLK  &mkp MB3  &mkp LCLK
+                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
         >;
     };
 
