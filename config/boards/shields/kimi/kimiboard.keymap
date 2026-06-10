@@ -17,9 +17,8 @@
 
         default_layer {
             bindings = <
-                // 本体180度回転に対応：idx 1とidx 3を入れ替え
-                // ユーザー視点で左→右: 1キー(BS), 2キー(SPACE), 3キー(ENTER), 0キー(BT, 小キー右端)
-                &bt BT_NXT  &kp ENTER  &kp SPACE  &kp BACKSPACE
+                // 非回転（README通り）：左→右 0キー(BT), 1キー(BS), 2キー(SPACE), 3キー(ENTER)
+                &bt BT_NXT  &kp BACKSPACE  &kp SPACE  &kp ENTER
             >;
 	};
 
@@ -70,7 +69,7 @@
 
         combo_layer7 {
             bindings = <&bt BT_CLR>;
-            key-positions = <0 1>;
+            key-positions = <0 3>;
             timeout-ms = <50>;
             layers = <0>;
         };
@@ -97,5 +96,5 @@
 #include <input/processors.dtsi>
 
 &trackball_listener {
-    input-processors = <&zip_xy_transform 6>;
+    input-processors = <&zip_xy_transform 3>;
 };
