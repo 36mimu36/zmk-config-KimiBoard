@@ -17,21 +17,20 @@
 
         default_layer {
             bindings = <
-                // 非回転（README通り）：左→右 0キー(BT), 1キー(BS), 2キー(SPACE), 3キー(ENTER)
+                // row0左から右へ（一番左のキーはリセットボタン）
                 &bt BT_NXT  &kp BACKSPACE  &kp SPACE  &kp ENTER
             >;
 	};
 
     mouse_key_layer {
-            // 1キー=button2(R CLK), 2キー=button1(L CLK), 3キー=button3(WHEEL)
             bindings = <
-                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
+                &trans  &mkp MB3  &mkp LCLK  &mkp RCLK
         >;
     };
 
     auto_mouse_layer {
             bindings = <
-                &trans  &mkp RCLK  &mkp LCLK  &mkp MB3
+                &trans  &mkp MB3  &mkp LCLK  &mkp RCLK
         >;
     };
 
@@ -40,7 +39,7 @@
                 &trans  &trans  &trans  &trans
         >;
     };
-    
+
 
 
     };
@@ -52,8 +51,20 @@
             // タップでLANGUAGE_2へ切り替え
 			// ホールドでスクロールレイヤー
 
-        // 旧 combo_layer1 (2+3 → LANGUAGE_2) と combo_layer2 (1+2 → LANGUAGE_1) は削除
-        // スクロールコンボに位置を譲った (英数/かなは Karabiner 側で対応)
+        combo_layer1 {
+            bindings = <&lt 3 LANGUAGE_2>;
+            key-positions = <1 2>;
+            timeout-ms = <50>;
+        };
+
+        // Key2 + 3 = (□ - □ ■ ■)
+			// タップでLANGUAGE_1へ切り替え
+
+        combo_layer2 {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <2 3>;
+            timeout-ms = <50>;
+        };
 
         // Key1 + 3 = (□ -  ■ □ ■)
 			// 1番レイヤーをトグル(マウス操作限定レイヤー)
@@ -71,31 +82,9 @@
             bindings = <&bt BT_CLR>;
             key-positions = <0 3>;
             timeout-ms = <50>;
-            layers = <0>;
-        };
-
-        // 図の 1キー+2キー → ホイール上 (デフォルト10の3倍 = 30、全レイヤー)
-        combo_scroll_up {
-            bindings = <&msc MOVE_Y(30)>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-        };
-
-        // 図の 2キー+3キー → ホイール下 (全レイヤー)
-        combo_scroll_down {
-            bindings = <&msc MOVE_Y(-30)>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
         };
 
 
     };
 
-};
-
-#include <input/processors.dtsi>
-
-&trackball_listener {
-    // 非回転：軸変換なし（SWAP・反転とも不要。ORIENTATION_180=y と合わせて自然な向き）
-    input-processors = <&zip_xy_transform 0>;
 };

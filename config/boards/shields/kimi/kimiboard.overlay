@@ -1,4 +1,3 @@
-
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
@@ -13,7 +12,7 @@
         kscan = <&kscan0>;
         transform = <&default_transform>;
 
-    keys = 
+    keys =
             //                     w    h    x     y   rot rx  ry
              <&key_physical_attrs  50   100    0   0   0   0   0>   // SW1(リセット用ボタン)
             , <&key_physical_attrs 100  100  120   0   0   0   0>   // SW2(左ボタン)
@@ -51,10 +50,11 @@
 };
 
 / {
-  trackball_listener: trackball_listener {
+  trackball_listener {
     status = "okay";
     compatible = "zmk,input-listener";
     device = <&trackball>;
+
   };
 };
 
